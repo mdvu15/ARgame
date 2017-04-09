@@ -4,29 +4,22 @@ using System.Collections;
 
 public enum ePlayer
 {
-	Front,
-	Back
+	Human,
+	AI
 }
 
 
 public class Player : MonoBehaviour {
-	
-
-	public float speed = 15f;
 	public ePlayer player;
-
 	void FixedUpdate () 
 	{
-		float inputSpeed = 0f;
-		if (player == ePlayer.Front)
-		{
-			inputSpeed = Input.GetAxisRaw("PlayerFront");
-		}
-		else if (player == ePlayer.Back)
-		{
-			inputSpeed = Input.GetAxisRaw("PlayerBack");
-		}
-
-		transform.position += new Vector3(0f, 0f, inputSpeed * speed * Time.deltaTime);
+		//inputSpeed = Input.GetAxisRaw("PlayerFront");
+		//if (Camera.main.transform.position.z > -0.5 & Camera.main.transform.position.z < 0.5) {
+			transform.position = new Vector3 (transform.position.x, transform.position.y, Camera.main.transform.position.z);
+		//} //else if (Camera.main.transform.position.z < -0.5) {
+			//transform.position = new Vector3 (transform.position.x, transform.position.y, -0.5f);
+		//} else {
+		//	transform.position = new Vector3 (transform.position.x, transform.position.y, 0.5f);
+		//}
 	}
 }

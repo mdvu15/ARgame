@@ -1,30 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/// <summary>
-/// This behaviour is attached to a player.
-/// It controls the movement of the player with a simple AI.
-/// 
-/// 
-/// The AI keeps the z-position of the player with the z-position of the ball.
-/// The variable speed controls how fast the player moves with the ball.
-/// </summary>
+
 public class PlayerAI : MonoBehaviour 
 {
-	/// <summary>
-	/// The units a player moves per second along the z axis.
-	/// </summary>
 	public float speed = 2.5f;
-
-	/// <summary>
-	/// Reference to the transform of the ball.
-	/// This is required to move the AI depending on the ball position.
-	/// </summary>
 	private Transform ballTransform;
 
 	void Start()
 	{
-		// find reference for the ball transform
 		GameObject ballGameObject = GameObject.Find("Ball");
 		if (ballGameObject == null)
 		{
@@ -37,10 +21,7 @@ public class PlayerAI : MonoBehaviour
 		}
 	}
 	
-	/// <summary>
-	/// Updates the player position.
-	/// We use FixedUpdate() instead of Update(), because the collision of the player is controlled by the physic engine.
-	/// </summary>
+
 	void FixedUpdate () 
 	{
 		// input speed of the AI from -1 to 1
