@@ -15,7 +15,7 @@ public class Player : MonoBehaviour {
 	{
 		//inputSpeed = Input.GetAxisRaw("PlayerFront");
 		//if (Camera.main.transform.position.z > -0.5 & Camera.main.transform.position.z < 0.5) {
-			transform.position = new Vector3 (transform.position.x, transform.position.y, Camera.main.transform.position.z);
+		transform.position = new Vector3 (transform.position.x, transform.position.y, Camera.main.transform.position.z);
 		//} //else if (Camera.main.transform.position.z < -0.5) {
 			//transform.position = new Vector3 (transform.position.x, transform.position.y, -0.5f);
 		//} else {
